@@ -64,7 +64,6 @@ TARGETS  = ${SRCFILES:.c=}
 all:	${TARGETS}
 
 test_tx:	test_tx.o ${BINDIR}/libmclnorm.a
-	${CC} ${CFLAGS} test_tx.o ${LIBRARIES} -o test_tx
 	#${CC} ${CFLAGS} test_tx.o ${LIBRARIES} -o test_tx
 	${CC} ${CFLAGS} test_tx.o -o test_tx ${LIBRARIES}
 	#strip test_tx
