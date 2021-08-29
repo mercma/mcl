@@ -17,7 +17,8 @@ ifeq (${OS},linux)
 	# add MPATROL support if required
 	#
 	BINDIR = ../../bin/linux
-	LIBRARIES = -lc -lm -lpthread ${BINDIR}/libmclnorm.a
+	#LIBRARIES = -lc -lm -lpthread ${BINDIR}/libmclnorm.a
+	LIBRARIES = ${BINDIR}/libmclnorm.a -lc -lm -lpthread
 endif
 
 ifeq (${OS},solaris)
@@ -64,18 +65,23 @@ all:	${TARGETS}
 
 test_tx:	test_tx.o ${BINDIR}/libmclnorm.a
 	${CC} ${CFLAGS} test_tx.o ${LIBRARIES} -o test_tx
+	#${CC} ${CFLAGS} test_tx.o ${LIBRARIES} -o test_tx
+	${CC} ${CFLAGS} test_tx.o -o test_tx ${LIBRARIES}
 	#strip test_tx
 
 test_multi_sessions1:	test_multi_sessions1.o ${BINDIR}/libmclnorm.a
-	${CC} ${CFLAGS} test_multi_sessions1.o ${LIBRARIES} -o test_multi_sessions1
+	#${CC} ${CFLAGS} test_multi_sessions1.o ${LIBRARIES} -o test_multi_sessions1
+	${CC} ${CFLAGS} test_multi_sessions1.o -o test_multi_sessions1 ${LIBRARIES}
 	#strip test_multi_sessions1
 
 test_multi_sessions2:	test_multi_sessions2.o ${BINDIR}/libmclnorm.a
-	${CC} ${CFLAGS} test_multi_sessions2.o ${LIBRARIES} -o test_multi_sessions2
+	#${CC} ${CFLAGS} test_multi_sessions2.o ${LIBRARIES} -o test_multi_sessions2
+	${CC} ${CFLAGS} test_multi_sessions2.o -o test_multi_sessions2 ${LIBRARIES}
 	#strip test_multi_sessions2
 
 pure:	test_tx.o ${BINDIR}/libmclnorm.a
-	${CCLINK_PURE} ${CFLAGS} test_tx.o ${LIBRARIES} -o test_tx
+	#${CCLINK_PURE} ${CFLAGS} test_tx.o ${LIBRARIES} -o test_tx
+	${CCLINK_PURE} ${CFLAGS} test_tx.o -o test_tx ${LIBRARIES}
 
 clean :
 	@for f in core ${OFILES} ; do \

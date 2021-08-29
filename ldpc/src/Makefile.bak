@@ -19,7 +19,7 @@ ifeq (${OS},linux)
 	#
 	#LIBRARIES = -Wl,-Bstatic -lefence -Wl,-Bdynamic -lc -lm -lpthread
 	LIBRARIES = -lc -lm -lpthread 
-	BINDIR = ../bin/linux
+	BINDIR = ../../bin/linux
 endif
 
 ifeq (${OS},solaris)
@@ -31,7 +31,7 @@ endif
 
 ifeq (${OS},freebsd)
 	# FreeBSD version
-	BINDIR = ../bin/freebsd
+	BINDIR = ../../bin/freebsd
 	LIBRARIES = -lm -pthread
 endif
 

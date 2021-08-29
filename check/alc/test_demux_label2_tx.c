@@ -59,7 +59,9 @@ main (int       argc,
 {
 	int     id[SESSION_NB];
 	int	dl[SESSION_NB] =			/* labels to use */
-			{DEMUX_LABEL_0, DEMUX_LABEL_1, DEMUX_LABEL_2};
+			{static_cast<int>(DEMUX_LABEL_0), 
+			 static_cast<int>(DEMUX_LABEL_1), 
+			 static_cast<int>(DEMUX_LABEL_2)};
 	int	port = 2000;				/* in host format! */
 	UINT32  addr = ntohl(inet_addr("225.1.1.1"));	/* in host format! */
 	int	err;

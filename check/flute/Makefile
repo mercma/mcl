@@ -19,7 +19,7 @@ ifeq (${OS},linux)
 	LDPC_BINDIR = ../../bin/linux
 	XERCES_DIR = /usr/include/xercesc
 	# Shared version (default)
-	LIBRARIES = -lc -lm -lpthread 
+	LIBRARIES = -lc -lm -lpthread
 	#-lcrypto
 	ADD_INCLUDES = -I${XERCES_DIR}
 endif
@@ -126,7 +126,8 @@ all:	${TARGETS}
 	$(CC) -c $(CFLAGS) -o $*.o $*.cpp
 
 test_open_close:	test_open_close.o ${FLUTE_LIBRARY}
-	${CC} ${CFLAGS} test_open_close.o ${LIBRARIES} ${FLUTE_LIBRARY} ${SDP_LIBRARY} ${MCL_LIBRARY} -o test_open_close
+	#${CC} ${CFLAGS} test_open_close.o ${LIBRARIES} ${FLUTE_LIBRARY} ${SDP_LIBRARY} ${MCL_LIBRARY} -o test_open_close
+	${CC} ${CFLAGS} test_open_close.o ${FLUTE_LIBRARY} ${SDP_LIBRARY} ${MCL_LIBRARY} -o test_open_close ${LIBRARIES}
 	#strip test_open_close
 
 clean :

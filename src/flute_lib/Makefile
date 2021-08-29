@@ -11,11 +11,13 @@ ifeq (${OS},linux)
 	#
 	BINDIR = ../../bin/linux
 	LDPC_BINDIR = ../../bin/linux
-	XERCES_DIR = ../../../xerces-c
+	#XERCES_DIR = ../../../xerces-c
+	XERCES_DIR = /usr/include/xerces-c
+	XERCES_BIN = /usr/lib/x86_64-linux-gnu/libxerces-c.a
 	# Shared version (default)
-	LIBRARIES = -lc -lm -lpthread 
+	LIBRARIES = -lc -lm -lpthread -lxerces
 	#-lcrypto
-	ADD_INCLUDES = -I/usr/local/include/ -I${XERCES_DIR}/include
+	ADD_INCLUDES = -I/usr/local/include/ -I${XERCES_DIR}
 endif
 
 ifeq (${OS},solaris)
@@ -102,7 +104,8 @@ OFILES	 = ${SRCFILES:.cpp=.o}
 OS_UPPER_CASE = `echo ${OS} | tr 'a-z' 'A-Z'`
 
 # XML parsing library
-static:  XERCES_LIBRARY := ${XERCES_DIR}/lib/libxerces-c.a
+#static:  XERCES_LIBRARY := ${XERCES_DIR}/lib/libxerces-c.a
+static:  XERCES_LIBRARY := /usr/lib/x86_64-linux-gnu/libxerces-c.a
 
 ###### Dependancies ######
 

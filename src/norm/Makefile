@@ -56,7 +56,7 @@ OFILES = ${SRCFILES:.cpp=.o}
 # WARNING: with gcc/g++, never use -O3 optimisation (compiler bugs)
 #
 #CFLAGS	= -DNORM ${OSFLAGS} ${LARGEFILE_FLAGS} -DDEBUG -g -fcheck-memory-usage
-CFLAGS	= -DNORM ${OSFLAGS} ${LARGEFILE_FLAGS} -DDEBUG -g	# debug version
+CFLAGS	= -DNORM ${OSFLAGS} ${LARGEFILE_FLAGS} -DDEBUG -g ${LIBRARIES}	 # debug version
 #CFLAGS	= -DNORM ${OSFLAGS} ${LARGEFILE_FLAGS} -O -g 		# optimized 
 #CFLAGS	= -DNORM ${OSFLAGS} ${LARGEFILE_FLAGS} -O -g -pg 	# optimized with profiling
 

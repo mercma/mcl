@@ -130,23 +130,21 @@ depend :
 #
 # DO NOT DELETE THIS LINE -- make depend depends on it.
 
-mclrecv.o: mclftp.h /usr/include/stdio.h /usr/include/features.h
-mclrecv.o: /usr/include/stdc-predef.h /usr/include/libio.h
-mclrecv.o: /usr/include/_G_config.h /usr/include/wchar.h
-mclrecv.o: /usr/include/stdlib.h /usr/include/alloca.h /usr/include/errno.h
-mclrecv.o: /usr/include/ctype.h /usr/include/endian.h /usr/include/xlocale.h
-mclrecv.o: /usr/include/string.h /usr/include/fcntl.h /usr/include/time.h
-mclrecv.o: /usr/include/unistd.h /usr/include/getopt.h /usr/include/netdb.h
-mclrecv.o: /usr/include/netinet/in.h /usr/include/stdint.h
+mclrecv.o: mclftp.h /usr/include/stdio.h /usr/include/stdlib.h
+mclrecv.o: /usr/include/errno.h /usr/include/features.h
+mclrecv.o: /usr/include/stdc-predef.h /usr/include/ctype.h
+mclrecv.o: /usr/include/string.h /usr/include/strings.h /usr/include/fcntl.h
+mclrecv.o: /usr/include/unistd.h /usr/include/netdb.h
+mclrecv.o: /usr/include/netinet/in.h /usr/include/endian.h
 mclrecv.o: /usr/include/rpc/netdb.h /usr/include/arpa/inet.h
 mclrecv.o: ../src/common/mcl_lib_api.h ../src/common/mcl_types.h
-mclsend.o: mclftp.h /usr/include/stdio.h /usr/include/features.h
-mclsend.o: /usr/include/stdc-predef.h /usr/include/libio.h
-mclsend.o: /usr/include/_G_config.h /usr/include/wchar.h
-mclsend.o: /usr/include/stdlib.h /usr/include/alloca.h /usr/include/errno.h
-mclsend.o: /usr/include/ctype.h /usr/include/endian.h /usr/include/xlocale.h
-mclsend.o: /usr/include/string.h /usr/include/fcntl.h /usr/include/time.h
-mclsend.o: /usr/include/unistd.h /usr/include/getopt.h /usr/include/netdb.h
-mclsend.o: /usr/include/netinet/in.h /usr/include/stdint.h
+mclrecv.o: /usr/include/stdint.h
+mclsend.o: mclftp.h /usr/include/stdio.h /usr/include/stdlib.h
+mclsend.o: /usr/include/errno.h /usr/include/features.h
+mclsend.o: /usr/include/stdc-predef.h /usr/include/ctype.h
+mclsend.o: /usr/include/string.h /usr/include/strings.h /usr/include/fcntl.h
+mclsend.o: /usr/include/unistd.h /usr/include/netdb.h
+mclsend.o: /usr/include/netinet/in.h /usr/include/endian.h
 mclsend.o: /usr/include/rpc/netdb.h /usr/include/arpa/inet.h
 mclsend.o: ../src/common/mcl_lib_api.h ../src/common/mcl_types.h
+mclsend.o: /usr/include/stdint.h

@@ -128,12 +128,12 @@ all:	dynamic
 	$(CC) -c $(CFLAGS) -o $*.o $*.cpp
 
 dynamic:	${OFILES} ${BINDIR}/libflute.a
-	@echo "** Compiling flute-ALC using the MCL library..."
+	@echo "** Compiling dynamic flute-ALC using the MCL library..."
 	${CC} ${CFLAGS} ${OFILES} -L${BINDIR} ${FLUTE_LIBRARY} ${SDP_LIBRARY} ${MCL_LIBRARY} ${LIBRARIES} -o ${TARGET_FLUTE}
 
 
 static: ${OFILES} ${BINDIR}/libflute.a
-	@echo "** Compiling flute-ALC using the MCL library..."
+	@echo "** Compiling static flute-ALC using the MCL library..."
 	${CC} -static -static-libgcc ${CFLAGS} ${OFILES} -L${BINDIR} ${FLUTE_LIBRARY} ${SDP_LIBRARY} ${MCL_LIBRARY} ${LIBRARIES} -o ${TARGET_FLUTE}
 
 clean :
